@@ -1,7 +1,13 @@
 import json
 from flask import jsonify, Flask, request
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+
+# Disable CORS restrictions (allow all origins, methods, and headers)
+CORS(app)
+
 
 @app.route('/health')
 def health_check():
